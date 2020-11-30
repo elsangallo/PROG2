@@ -8,13 +8,24 @@
 	<body>
 		<h1>Hallo {{ name }}!</h1>
 		<a href="{{ url_for('startseite')}}">Test</a>
-		<form method="Falleingang">
-			<input type="text" fallnr="Fallnummer" placeholder="Bitte geben Sie die Fallnummer ein"><input type="text" namen="Vornamen/Nachnachamen" placeholder="Bitte geben Sie den kompletten Namen ein">
+		<form method="Fallerfassung">
+			<input type="text" fallnr="Fallnummer" placeholder="Bitte geben Sie die Fallnummer ein">
+			<input type="text" vornamen="Vornamen" placeholder="Bitte geben Sie den Vornamen ein">
+			<input type="text" nachnamen="nachnamen" placeholder="Bitte geben Sie den Nachnamen ein">
 			<input type="text" auftraggeber="Auftraggeber" placeholder="Bitte geben Sie den Auftraggeber ein">
+			<input type="text" disziplin="Disziplin" placeholder="Bitte geben Sie die Disziplin 	 ein">
 			<input type="date" datum="Eingangsdatum" placeholder="Bitte geben Sie das Falleingangsdatum ein">
 			<input type="date" termin="Abschlusstermin" placeholder="Bitte geben Sie den Abschlusstermin ein">
 			<button type="submit">Senden</button>
 		</form>
+
+	   <ul>
+        {% for ding in dinger %}
+            <li>{{ ding }}</li>
+
+        {% endfor %}
+	    </ul>
+
 	</body>
 
 </html>
